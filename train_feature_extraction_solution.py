@@ -1,17 +1,17 @@
-import pickle
 import time
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
 
 from alexnet import AlexNet
+import fickling
 
 nb_classes = 43
 epochs = 10
 batch_size = 128
 
 with open('./train.p', 'rb') as f:
-    data = pickle.load(f)
+    data = fickling.load(f)
 
 X_train, X_val, y_train, y_val = train_test_split(data['features'], data['labels'], test_size=0.33, random_state=0)
 
